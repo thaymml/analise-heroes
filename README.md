@@ -41,10 +41,10 @@ O objetivo do projeto é explorar os dados e criar visualizações gráficas que
 ├── data/                    # Pasta para o dataset
 │   └── heroes.csv
 ├── venv/                    # Ambiente virtual (ignorado no Git)
-├── README.md                # Informações do projeto
+├── README.md                
 ├── requirements.txt         # Dependências do projeto
 ├── analise.py               # Código principal de análise
-└── .gitignore               # Arquivo para ignorar arquivos desnecessários no Git
+└── .gitignore               
 ```
 
 ## Como Rodar o Projeto
@@ -79,8 +79,5 @@ O objetivo do projeto é explorar os dados e criar visualizações gráficas que
 O dataset foi obtido do repositório <a href="https://github.com/dariomalchiodi/superhero-datascience" target="_blank">dariomalchiodi/superhero-datascience</a>. Durante o desenvolvimento, o Kaggle estava fora do ar, e este dataset foi encontrado pesquisando por "heroes" no GitHub. Apenas o arquivo ```heroes.csv``` foi utilizado deste repositório.
 
 
-## Licença
-
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
 Feito com ❤️ por Thay.
