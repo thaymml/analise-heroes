@@ -35,7 +35,7 @@ plt.ylabel('Peso (kg)', fontsize=12)
 plt.legend(title='Força', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.show()
 
-# 3. Gráfico de Linhas: Quantidade de Personagens ao Longo dos Anos
+# 3. Gráfico de Linhas: Qtde de Personagens ao Longo dos Anos
 plt.figure(figsize=(12, 6))
 df['Year'].dropna().value_counts().sort_index().plot(kind='line', marker='o', color='green')
 plt.title('Quantidade de Personagens ao Longo dos Anos', fontsize=16)
@@ -66,12 +66,12 @@ sns.heatmap(correlation, annot=True, cmap='coolwarm', fmt='.2f')
 plt.title('Matriz de Correlação', fontsize=16)
 plt.show()
 
-# 7. Gráfico Interativo: Altura x Peso com Plotly
+# 7. Gráfico: Altura x Peso 
 fig = px.scatter(df, x='Height', y='Weight', color='Publisher', size='Strength', hover_data=['Name'])
 fig.update_layout(title='Altura x Peso Interativo', xaxis_title='Altura (cm)', yaxis_title='Peso (kg)')
 fig.show()
 
-# 8. Gráfico Interativo: Força x Ano de Primeira Aparição com Plotly
+# 8. Gráfico: Força x Ano de Primeira Aparição 
 fig = px.scatter(df, x='Year', y='Strength', color='Publisher', size='Strength', 
                  hover_data=['Name', 'Gender'], 
                  labels={'Year': 'Ano de Primeira Aparição', 'Strength': 'Força'},
@@ -88,23 +88,21 @@ heroes = ['Superman', 'Aquaman', 'Black Panther', 'Batman', 'Batwoman', 'Captain
           'Doctor Strange', 'Flash', 'Gorilla Grodd', 'Iron Man', 'Krypto', 'Wanda Maximoff', 
           'Wonder Woman', 'Jean Grey', 'Mystique']
 
-# Filtrar os dados para incluir apenas os personagens selecionados
 df_filtered = df[df['Name'].isin(heroes)]
 
-# Gráfico Interativo: Altura x Peso com Nome e Editora
+# Gráfico: Altura x Peso com Nome e Editora
 fig = px.scatter(df_filtered, x='Height', y='Weight', color='Publisher', hover_name='Name', 
                  title='Altura x Peso dos Personagens Marvel vs DC',
                  labels={'Height': 'Altura (cm)', 'Weight': 'Peso (kg)', 'Publisher': 'Editora'},
                  color_discrete_map={'Marvel': 'blue', 'DC': 'red'})
 
-# Exibir o gráfico
 fig.show()
 
-# Gráfico Interativo de Pizza: Distribuição de Personagens por Editora
+# Gráfico Interativo: Distribuição de Personagens por Editora
 fig = px.pie(df_filtered, names='Publisher', title='Distribuição de Personagens por Editora')
 fig.show()
 
-# Gráfico de Radar Interativo: Comparação de Força, Altura e Peso de Personagens
+# Gráfico Interativo: Comparação Força, Altura e Peso de Personagens
 fig = px.line_polar(df_filtered, r='Strength', theta='Name', line_close=True, 
                     title='Comparação de Força dos Personagens')
 fig.show()
@@ -115,12 +113,12 @@ fig = px.scatter_3d(df_filtered, x='Height', y='Weight', z='Intelligence',
                     title='Altura, Peso e Inteligência dos Personagens')
 fig.show()
 
-# Gráfico Interativo de Boxplot: Distribuição de Altura por Editora
+# Gráfico Interativo: Distribuição de Altura por Editora
 fig = px.box(df_filtered, x='Publisher', y='Height', points='all',
              title='Distribuição de Altura dos Personagens por Editora')
 fig.show()
 
-# Gráfico Interativo de Violin: Distribuição de Altura por Gênero
+# Gráfico Interativo: Distribuição de Altura por Gênero
 fig = px.violin(df_filtered, x='Gender', y='Height', box=True, points='all', 
                 title="Distribuição de Altura por Gênero")
 fig.show()
